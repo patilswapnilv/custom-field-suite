@@ -13,6 +13,7 @@ class Custom_Field_Suite
 {
 
     public $api;
+    public $form;
     public $fields;
     public $field_group;
     private static $instance;
@@ -51,7 +52,7 @@ class Custom_Field_Suite
         }
 
         $this->register_post_type();
-        $this->get_field_types();
+        $this->fields = $this->get_field_types();
     }
 
 
@@ -111,6 +112,23 @@ class Custom_Field_Suite
 
 
     /**
+     * Generate input field HTML
+     */
+    function create_field( $field ) {
+        $defaults = array(
+            'type' => 'text',
+            'input_name' => '',
+            'input_class' => '',
+            'options' => array(),
+            'value' => '',
+        );
+
+        $field = (object) array_merge( $defaults, (array) $field );
+        $this->fields[ $field->type ]->html( $field );
+    }
+
+
+    /**
      * Abstractions
      */
     function get( $field_name = false, $post_id = false, $options = array() ) {
@@ -133,6 +151,13 @@ class Custom_Field_Suite
 
     function save( $field_data = array(), $post_data = array(), $options = array() ) {
         return $this->api->save_fields( $field_data, $post_data, $options );
+    }
+
+
+    function form( $params = array() ) {
+        ob_start();
+        $this->form->render( $params );
+        return ob_get_clean();
     }
 }
 

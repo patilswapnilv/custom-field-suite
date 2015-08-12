@@ -1,13 +1,12 @@
 <?php
 /*
 Plugin Name: Custom Field Suite
-Plugin URI: http://customfieldsuite.com/
-Description: Visually add custom fields to your WordPress edit pages.
+Plugin URI: https://github.com/mgibbs189/custom-field-suite
+Description: Visually add custom fields to your WordPress edit screens
 Version: 2.4.4
 Author: Matt Gibbs
 Author URI: http://customfieldsuite.com/
-Text Domain: cfs
-Domain Path: /languages/
+License: GPLv2
 */
 
 class Custom_Field_Suite

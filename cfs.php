@@ -46,14 +46,12 @@ class Custom_Field_Suite
      */
     function init() {
 
-        foreach ( array( 'api', 'upgrade', 'field', 'field_group', 'revision' ) as $f ) {
+        foreach ( array( 'api', 'upgrade', 'field', 'field-group', 'edit-screen', 'ajax', 'revision' ) as $f ) {
             include( CFS_DIR . "/includes/$f.php" );
         }
 
         $this->register_post_type();
         $this->get_field_types();
-
-        add_action( 'admin_menu', array( $this, 'admin_menu' ) );
     }
 
 
@@ -109,16 +107,6 @@ class Custom_Field_Suite
         }
 
         return $field_types;
-    }
-
-
-    /**
-     * Add the CFS settings menu
-     */
-    function admin_menu() {
-        if ( ! apply_filters( 'cfs_disable_admin', false ) ) {
-            add_submenu_page( 'edit.php?post_type=cfs', __( 'Settings', 'cfs' ), __( 'Settings', 'cfs' ), 'manage_options', 'cfs-settings', array( $this, 'page_settings' ) );
-        }
     }
 
 

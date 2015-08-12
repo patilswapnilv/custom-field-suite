@@ -46,7 +46,7 @@ class Custom_Field_Suite
      */
     function init() {
 
-        foreach ( array( 'api'/*, 'upgrade', 'field', 'field_group', 'revision'*/ ) as $f ) {
+        foreach ( array( 'api', 'upgrade', 'field', 'field_group', 'revision' ) as $f ) {
             include( CFS_DIR . "/includes/$f.php" );
         }
 

@@ -122,7 +122,7 @@ class cfs_api
                     }
 
                     if ( $num_rows == ( $row_count + 1 ) ) { // last row
-                        $this->assemble_value_array( $field_data, $hierarchy, $field, false, $options );
+                        $this->assemble_value_array( $field_data, $prev_hierarchy, $field, false, $options );
                     }
 
                     $prev_hierarchy = $hierarchy;

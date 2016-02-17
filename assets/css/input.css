@@ -79,18 +79,8 @@
     True / false
 ---------------------------------------------------------------------------------------------*/
 
-.cfs_true_false .checkbox {
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-    display: inline-block;
-    background: url(../images/checkbox-off.png) no-repeat;
-    vertical-align: bottom;
-    margin-right: 3px;
-}
-
-.cfs_true_false .checkbox.active {
-    background: url(../images/checkbox-on.png) no-repeat;
+.cfs_input .field .cfs_true_false label {
+	font-weight: normal;
 }
 
 /*---------------------------------------------------------------------------------------------
@@ -288,7 +278,7 @@
 }
 
 .cfs_input .cfs_loop_toggle:before {
-    content: '\f111';
+    content: '\f177';
 }
 
 .cfs_loop .loop_wrapper {
@@ -374,6 +364,10 @@
 
 .cfs-tab-content.active {
     display: block;
+}
+
+.cfs-tab-notes {
+    padding: 10px;
 }
 
 /*---------------------------------------------------------------------------------------------
